@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: libretranslate
+    env: docker
+    dockerfilePath: ./docker/Dockerfile
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: with_models
+        value: true
+      - key: models
+        value: en,zh # 你想加载的语言模型代码（可选）
